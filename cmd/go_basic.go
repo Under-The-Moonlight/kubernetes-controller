@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )
 
@@ -48,8 +49,10 @@ func (k8s Kubernetes) GetUsers() {
 	for _, user := range k8s.Users {
 		fmt.Println(user)
 	}
+	log.Info().Msg("Printed list of users")
 }
 
 func (k8s *Kubernetes) AddNewUser(user string) {
 	k8s.Users = append(k8s.Users, user)
+	log.Info().Msgf("User %v added", user)
 }
