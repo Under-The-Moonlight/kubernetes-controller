@@ -1,16 +1,14 @@
 /*
 Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
-	"os"
-
+	"errors"
+	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
+	"os"
 )
-
-
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -32,6 +30,8 @@ to quickly create a Cobra application.`,
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
+		err := errors.New("seems we have an error here")
+		log.Error().Err(err).Msg("Big error occured")
 		os.Exit(1)
 	}
 }
@@ -47,5 +47,3 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-
