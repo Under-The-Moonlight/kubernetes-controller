@@ -13,7 +13,7 @@ import (
 var logLevel string
 
 var rootCmd = &cobra.Command{
-	Use:   "k8s-controller-tutorial",
+	Use:   "k8-kos",
 	Short: "A brief description of your application",
 	Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
