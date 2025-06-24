@@ -6,5 +6,6 @@ package main
 import "github.com/Under-The-Moonlight/kubernetes-controller/cmd"
 
 func main() {
-	cmd.Execute()
+    cmd.Execute()
 }
+
